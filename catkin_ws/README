@@ -1,0 +1,7 @@
+To run the simple arm assignment, go through the following steps:
+In the catkin_wa/src run: `git clone -b first_interaction https://github.com/udacity/RoboND-simple_arm/ simple_arm`
+In catkin_ws/ run `catkin_make`
+Then: `source devel/setup.bash`
+Last: `roslaunch simple_arm robot_spawn.launch`
+Note: The were some errors regarding simple_arm_spawner although it didn't seem to hurt the models in Gazebo.
+The issue was not fixed but deemed not breaking.
