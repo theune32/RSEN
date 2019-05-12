@@ -8,7 +8,7 @@
 ## Tips
 Always run `sudo apt-get update && sudo apt-get upgrade -y`
 I can recommend Visual Studio Code, easily used for multiple programming and scripting languages in the same project/folder.
-
+For using multiple terminals I can recommend tmux, it is very easy to create multiple windows and split them. And then have hotkeys to move between them!
 
 ## Errors handled/solved/worked around
 - Gazebo giving error:
