@@ -2,7 +2,7 @@
 
 ## Characteristics
 - Ubuntu 18.04.2 LTS
-- ROS version ?
+- ROS version Meldocic(!)
 - Gazebo version ?
 
 ## Tips
@@ -16,4 +16,6 @@ For using multiple terminals I can recommend tmux, it is very easy to create mul
   Solution described [here](https://bitbucket.org/osrf/gazebo/issues/2607/error-restcc-205-during-startup-gazebo)
 - Gazebo bug/missing functionality:
     Interesting find, you cannot edit existing/saved buildings. Some aspects are changeable but not much.
-
+- Multiple errors having to do with controllers not being able to be found.
+    In the end I ended up installing/updating some ros melodic packages:
+    ```sudo apt-get install ros-melodic-ros-control ros-melodic-ros-controllers ros-melodic-joint-state-controllers```
