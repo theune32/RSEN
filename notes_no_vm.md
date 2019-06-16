@@ -24,4 +24,14 @@ An helpful link for setting up ros node classes is found [here](https://github.c
 - rviz didnt show any models except the meshed LIDAR, see [here] (https://answers.ros.org/question/296227/robot-model-does-not-appear-in-rviz-melodic/) and [here] (https://github.com/ros-visualization/rviz/issues/1249). TL/DR: `export LC_NUMERIC="en_US.UTF-8"` worked for me. Colors are not completely ok though. Update: looks like the red is some kind of highlighting.
 - Following the instructions in the GoChaseProject I ran into an error adding the whitebal. When saving the world the robot model was also saved leading to errors in Gazebo that complained about there being 2 models with the same name:
 `SpawnModel: Failure - model nam my_robot already exits.` Manually removing the my_robot models from world file solved this.
-- Part 3(lesson 4): now we no longer can use melodic instead of kinetic easily. Eventually when first launching gazebo I was able to fix all issues by following this [link](https://github.com/turtlebot/turtlebot/issues/272#issuecomment-471202595). Warning: this won't be easy and you have to follow it to the letter and probably figure some stuff out on your own but it works.
+- Part 4(lesson 4): now we no longer can use melodic instead of kinetic easily. Eventually when first launching gazebo I was able to fix all issues by following this [link](https://github.com/turtlebot/turtlebot/issues/272#issuecomment-471202595). Warning: this won't be easy and you have to follow it to the letter and probably figure some stuff out on your own but it works.
+- Part4(project) (WIP): sever issues, was able to solve issues building pgm_map_creator.
+
+    In file `src/collision_map_creator.cc`:
+    - line 5: comment out
+    - line 35: `node->Init(world->Name());`
+    - line 97: `gazebo::physics::PhysicsEnginePtr engine = world->Physics();`
+
+    At map creation, the following error `sdf` can be solved by removing lines 12,13,14 from `catkin_ws/src/pgm_map_creator/msgs/CMakeLists.txt`. The lines regarding `PROTO_BUF_IMPORT_DIRS`.
+
+    At the step where you download the config file, in the current version it looks for a package called `udacity_bot`, replaces this with your package name, in my case: `my_robot`.
